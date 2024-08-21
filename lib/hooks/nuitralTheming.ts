@@ -1,45 +1,45 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react'
 
 const useNuitralTheming = ({
-  theme = 'nuitral',
-  darkMode = false,
-  lightModeName = 'nuitral-light-mode',
-  darkModeName = 'nuitral-dark-mode',
-  id = 'app',
+	theme = 'nuitral',
+	darkMode = false,
+	lightModeName = 'nuitral-light-mode',
+	darkModeName = 'nuitral-dark-mode',
+	id = 'app',
 }) => {
-  const [hasDarkTheme, setHasDarkTheme] = useState(darkMode);
-  const [themeName, setThemeName] = useState(theme);
-  const appRef = useRef<HTMLElement | null>(document.getElementById(id));
+	const [hasDarkTheme, setHasDarkTheme] = useState(darkMode)
+	const [themeName, setThemeName] = useState(theme)
+	const appRef = useRef<HTMLElement | null>(document.getElementById(id))
 
-  const applyModeAndTheme = (mode: string) => {
-    if (appRef.current) {
-      appRef.current.setAttribute('nuitral-theme', themeName);
-      appRef.current.classList.add(mode);
-      appRef.current.classList.remove(
-        mode === darkModeName ? lightModeName : darkModeName
-      );
-    }
-  };
+	const applyModeAndTheme = (mode: string) => {
+		if (appRef.current) {
+			appRef.current.setAttribute('nuitral-theme', themeName)
+			appRef.current.classList.add(mode)
+			appRef.current.classList.remove(
+				mode === darkModeName ? lightModeName : darkModeName
+			)
+		}
+	}
 
-  const toggleMode = () => {
-    setHasDarkTheme(prevMode => !prevMode);
-  };
+	const toggleMode = () => {
+		setHasDarkTheme(prevMode => !prevMode)
+	}
 
-  const manageDarkMode = () => {
-    toggleMode();
-  };
+	const manageDarkMode = () => {
+		toggleMode()
+	}
 
-  const manageTheme = (t: string) => {
-    setThemeName(t);
-  };
+	const manageTheme = (t: string) => {
+		setThemeName(t)
+	}
 
-  useEffect(() => {
-    if (appRef.current) {
-      applyModeAndTheme(hasDarkTheme ? darkModeName : lightModeName);
-    }
-  }, [hasDarkTheme, themeName]);
+	useEffect(() => {
+		if (appRef.current) {
+			applyModeAndTheme(hasDarkTheme ? darkModeName : lightModeName)
+		}
+	}, [hasDarkTheme, themeName])
 
-  return { manageDarkMode, hasDarkTheme, manageTheme };
-};
+	return { manageDarkMode, hasDarkTheme, manageTheme }
+}
 
-export default useNuitralTheming;
+export default useNuitralTheming

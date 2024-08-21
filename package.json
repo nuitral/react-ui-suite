@@ -1,46 +1,48 @@
 {
-  "name": "@nuitral/react-ui-suite",
-  "private": true,
-  "version": "0.0.1-alpha.1",
-  "main": "dist/react-ui-suite.cjs.js",
-  "module": "dist/react-ui-suite.esm.js",
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist/*"
-  ],
-  "scripts": {
-    "build": "rm -rf dist && rollup -c",
-    "dev": "vite",
-    "format": "prettier --write ."
-  },
-  "keywords": [
-    "Nuitral",
-    "UI",
-    "React",
-    "Suite"
-  ],
-  "description": "Nuitral React UI Suite",
-  "author": "Nicola Centonze",
-  "license": "MIT",
-  "dependencies": {
-    "@nuitral/theming": "file:../theming/nuitral-theming-0.0.1-alpha.1.tgz",
-    "react": "^17.0.0 || ^18.0.0",
-    "react-dom": "^17.0.0 || ^18.0.0"
-  },
-  "devDependencies": {
-    "@rollup/plugin-commonjs": "^26.0.1",
-    "@rollup/plugin-node-resolve": "^15.2.3",
-    "@rollup/plugin-terser": "^0.4.4",
-    "@rollup/plugin-typescript": "^11.1.6",
-    "@types/node": "^22.4.1",
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
-    "@vitejs/plugin-react-swc": "^3.7.0",
-    "prettier": "^3.3.3",
-    "rollup": "^4.21.0",
-    "sass-embedded": "^1.77.8",
-    "tslib": "^2.6.3",
-    "typescript": "^5.5.4",
-    "vite": "^5.4.2"
-  }
+	"name": "@nuitral/react-ui-suite",
+	"private": true,
+	"version": "0.0.1-alpha.1",
+	"main": "dist/react-ui-suite.cjs.js",
+	"module": "dist/react-ui-suite.esm.js",
+	"types": "dist/index.d.ts",
+	"files": [
+		"dist/*"
+	],
+	"scripts": {
+		"build": "rm -rf dist && rollup -c",
+		"dev": "vite",
+		"format": "prettier --write ."
+	},
+	"keywords": [
+		"Nuitral",
+		"UI",
+		"React",
+		"Suite"
+	],
+	"description": "Nuitral React UI Suite",
+	"author": "Nicola Centonze",
+	"license": "MIT",
+	"dependencies": {
+		"@nuitral/icons": "file:../icons/nuitral-icons-0.0.0.tgz",
+		"@nuitral/theming": "file:../theming/nuitral-theming-0.0.1-alpha.1.tgz",
+		"@nuitral/types": "file:../types/nuitral-types-0.0.1-alpha.1.tgz",
+		"react": "^17.0.0 || ^18.0.0",
+		"react-dom": "^17.0.0 || ^18.0.0"
+	},
+	"devDependencies": {
+		"@rollup/plugin-commonjs": "^26.0.1",
+		"@rollup/plugin-node-resolve": "^15.2.3",
+		"@rollup/plugin-terser": "^0.4.4",
+		"@rollup/plugin-typescript": "^11.1.6",
+		"@types/node": "^22.4.1",
+		"@types/react": "^18.3.3",
+		"@types/react-dom": "^18.3.0",
+		"@vitejs/plugin-react-swc": "^3.7.0",
+		"prettier": "^3.3.3",
+		"rollup": "^4.21.0",
+		"sass-embedded": "^1.77.8",
+		"tslib": "^2.6.3",
+		"typescript": "^5.5.4",
+		"vite": "^5.4.2"
+	}
 }

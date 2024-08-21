@@ -25,23 +25,28 @@ $background-light-scale: nuitral.generate-color-scale($background-light);
 $surface-light-scale: nuitral.generate-color-scale($surface-light);
 
 $light-mode: (
-  primary: $primary-light-scale,
-  secondary: $secondary-light-scale,
-  accent: $accent-light-scale,
-  background: $background-light-scale,
-  surface: $surface-light-scale,
-  error: $error-light-scale,
-  success: $success-light-scale,
-  warning: $warning-light-scale,
-  info: $info-light-scale,
-  neutral: $neutral-light-scale,
+	primary: $primary-light-scale,
+	secondary: $secondary-light-scale,
+	accent: $accent-light-scale,
+	background: $background-light-scale,
+	surface: $surface-light-scale,
+	error: $error-light-scale,
+	success: $success-light-scale,
+	warning: $warning-light-scale,
+	info: $info-light-scale,
+	neutral: $neutral-light-scale,
 );
 
 @include nuitral.generate-theme($light-mode, nuitral.$dark-mode, 'pop');
 
 html,
 body {
-  margin: 0;
-  width: 100%;
-  height: 100vh;
+	margin: 0;
+	width: 100%;
+	height: 100vh;
+	background-color: nuitral.$background !important;
+}
+
+.nuitral-dark-mode {
+	color: white;
 }
