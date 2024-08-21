@@ -9,7 +9,7 @@ const useNuitralTheming = ({
 }) => {
   const [hasDarkTheme, setHasDarkTheme] = useState(darkMode);
   const [themeName, setThemeName] = useState(theme);
-  const appRef = useRef(document.getElementById(id));
+  const appRef = useRef<HTMLElement | null>(document.getElementById(id));
 
   const applyModeAndTheme = (mode: string) => {
     if (appRef.current) {
@@ -29,7 +29,7 @@ const useNuitralTheming = ({
     toggleMode();
   };
 
-  const manageTheme = t => {
+  const manageTheme = (t: string) => {
     setThemeName(t);
   };
 

@@ -1,0 +1,47 @@
+@use '@nuitral/theming/dist/scss/_index.scss' as nuitral;
+
+@include nuitral.generate-theme(nuitral.$light-mode, nuitral.$dark-mode);
+
+$primary-light: #ff0054 !default;
+$secondary-light: #00d8ff !default;
+$accent-light: #ffdc00 !default;
+$error-light: #ff4136 !default;
+$success-light: #2ecc40 !default;
+$warning-light: #ff851b !default;
+$info-light: #0074d9 !default;
+$neutral-light: #b10dc9 !default;
+$background-light: #fdfefe !default;
+$surface-light: #ffffff !default;
+
+$primary-light-scale: nuitral.generate-color-scale($primary-light);
+$secondary-light-scale: nuitral.generate-color-scale($secondary-light);
+$accent-light-scale: nuitral.generate-color-scale($accent-light);
+$error-light-scale: nuitral.generate-color-scale($error-light);
+$success-light-scale: nuitral.generate-color-scale($success-light);
+$warning-light-scale: nuitral.generate-color-scale($warning-light);
+$info-light-scale: nuitral.generate-color-scale($info-light);
+$neutral-light-scale: nuitral.generate-color-scale($neutral-light);
+$background-light-scale: nuitral.generate-color-scale($background-light);
+$surface-light-scale: nuitral.generate-color-scale($surface-light);
+
+$light-mode: (
+  primary: $primary-light-scale,
+  secondary: $secondary-light-scale,
+  accent: $accent-light-scale,
+  background: $background-light-scale,
+  surface: $surface-light-scale,
+  error: $error-light-scale,
+  success: $success-light-scale,
+  warning: $warning-light-scale,
+  info: $info-light-scale,
+  neutral: $neutral-light-scale,
+);
+
+@include nuitral.generate-theme($light-mode, nuitral.$dark-mode, 'pop');
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+}
