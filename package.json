@@ -2,6 +2,9 @@
 	"name": "@nuitral/react-ui-suite",
 	"private": true,
 	"version": "0.0.1-alpha.1",
+	"publishConfig": {
+		"access": "public"
+	},
 	"main": "dist/react-ui-suite.cjs.js",
 	"module": "dist/react-ui-suite.esm.js",
 	"types": "dist/index.d.ts",
@@ -14,18 +17,23 @@
 		"format": "prettier --write ."
 	},
 	"keywords": [
-		"Nuitral",
+		"nuitral",
 		"UI",
 		"React",
 		"Suite"
 	],
-	"description": "Nuitral React UI Suite",
+	"description": "nuitral React UI Suite",
 	"author": "Nicola Centonze",
 	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:nuitral/react-ui-suite.git"
+	},
+	"homepage": "https://nuitral.github.io",
 	"dependencies": {
-		"@nuitral/icons": "file:../icons/nuitral-icons-0.0.0.tgz",
-		"@nuitral/theming": "file:../theming/nuitral-theming-0.0.1-alpha.1.tgz",
-		"@nuitral/types": "file:../types/nuitral-types-0.0.1-alpha.1.tgz",
+		"@nuitral/icons": "^0.0.1-alpha.1",
+		"@nuitral/theming": "^0.0.1-alpha.3",
+		"@nuitral/types": "^0.0.1-alpha.2",
 		"react": "^17.0.0 || ^18.0.0",
 		"react-dom": "^17.0.0 || ^18.0.0"
 	},

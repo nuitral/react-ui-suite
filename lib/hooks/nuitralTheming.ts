@@ -7,7 +7,7 @@ const useNuitralTheming = ({
 	darkModeName = 'nuitral-dark-mode',
 	id = 'app',
 }) => {
-	const [hasDarkTheme, setHasDarkTheme] = useState(darkMode)
+	const [isDarkMode, setHasDarkTheme] = useState(darkMode)
 	const [themeName, setThemeName] = useState(theme)
 	const appRef = useRef<HTMLElement | null>(document.getElementById(id))
 
@@ -35,11 +35,11 @@ const useNuitralTheming = ({
 
 	useEffect(() => {
 		if (appRef.current) {
-			applyModeAndTheme(hasDarkTheme ? darkModeName : lightModeName)
+			applyModeAndTheme(isDarkMode ? darkModeName : lightModeName)
 		}
-	}, [hasDarkTheme, themeName])
+	}, [isDarkMode, themeName])
 
-	return { manageDarkMode, hasDarkTheme, manageTheme }
+	return { manageDarkMode, isDarkMode, manageTheme }
 }
 
 export default useNuitralTheming
