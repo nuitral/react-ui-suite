@@ -1,26 +1,8 @@
-import React, { ReactNode, useMemo } from 'react'
-
-import {
-	NuitralButtonType,
-	NuitralClass,
-	NuitralIconPosition,
-} from '@nuitral/types'
+import React, { useMemo } from 'react'
 import useAttrs from '../../hooks/attributes'
 import useColorsAttributesValidator from '../../hooks/colorsAttributesValidator'
-import { NuitralIconsId } from '@nuitral/icons'
+import { NuitralButtonProps } from './types'
 import Icon from '../icon/Icon'
-
-interface NuitralButtonProps {
-	classes?: NuitralClass
-	type?: NuitralButtonType
-	icon?: NuitralIconsId | null
-	iconPosition?: NuitralIconPosition
-	disabled?: boolean
-	children?: ReactNode
-	leftSide?: ReactNode
-	rightSide?: ReactNode
-	[key: string]: any
-}
 
 const Button: React.FC<NuitralButtonProps> = ({
 	classes = '',

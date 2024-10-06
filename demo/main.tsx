@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { NuitralButton } from '../lib'
+import { NuitralBox, NuitralButton } from '../lib'
 import Navbar from './widgets/navbar'
 import '@nuitral/icons/dist/nuitral-icons.scss'
 import './style.scss'
@@ -11,9 +11,9 @@ function App() {
 		<div>
 			<Navbar></Navbar>
 			<Wrapper>
-				<h1>Nuitral React UI Suite</h1>
+				<h1>nuitral React UI Suite</h1>
 
-				<NuitralButton primary icon="user">
+				<NuitralButton accent icon="user">
 					Button
 				</NuitralButton>
 				<NuitralButton primary icon="user"></NuitralButton>
@@ -31,6 +31,11 @@ function App() {
 					disabled
 					rightSide={<div>Right Side</div>}
 				></NuitralButton>
+				<NuitralBox
+					title={'Title'}
+					description={'Description'}
+					primary
+				></NuitralBox>
 			</Wrapper>
 		</div>
 	)
