@@ -1,6 +1,5 @@
 {
 	"name": "@nuitral/react-ui-suite",
-	"private": true,
 	"version": "0.0.1-alpha.2",
 	"publishConfig": {
 		"access": "public"
