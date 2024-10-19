@@ -2,7 +2,7 @@ import { NuitralBoxProps } from '@nuitral/types'
 import React, { useMemo } from 'react'
 import useAttrs from '../../hooks/attributes'
 import useColorsAttributesValidator from '../../hooks/colorsAttributesValidator'
-const Box: React.FC<NuitralBoxProps> = ({ title, description, ...attrs } ) => {
+const Box: React.FC<NuitralBoxProps> = ({ title, description, ...attrs }) => {
 	const attributes = useAttrs(attrs)
 	const { isValidAttribute } = useColorsAttributesValidator()
 

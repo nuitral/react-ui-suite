@@ -5,7 +5,7 @@ const Navbar = () => {
 	const { manageDarkMode, isDarkMode, manageTheme } = useNuitralTheming({
 		theme: 'nuitral',
 		darkMode: false,
-		id: 'demo-app',
+		rootId: 'demo-app',
 	})
 
 	return (
