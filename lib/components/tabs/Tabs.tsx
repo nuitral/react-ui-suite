@@ -103,7 +103,7 @@ const NuitralTabs: React.FC<Partial<NuitralTabsProp>> = ({
 					</div>
 				))}
 			</div>
-			<div className="nuitral-tab-content">
+			<div className={`nuitral-tab-content ${alliItems[activeTab].classes}`}  >
 				{alliItems[activeTab]?.component ? (
 					React.createElement(
 						alliItems[activeTab].component as React.ComponentType
