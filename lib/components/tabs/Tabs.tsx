@@ -10,6 +10,7 @@ const NuitralTabs: React.FC<Partial<NuitralTabsProp>> = ({
 	children = [],
 	classes = '',
 	selected = 0,
+	onSelection,
 	...attrs
 }) => {
 	const [activeTab, setActiveTab] = useState(selected)
@@ -24,67 +25,92 @@ const NuitralTabs: React.FC<Partial<NuitralTabsProp>> = ({
 				filteredAttrs[key] = attributes[key]
 			}
 		}
-		return Object.keys(filteredAttrs).map(key => `nuitral-tab-${key}`)
+		return Object.keys(filteredAttrs)
+			.map(key => `nuitral-tab-${key}`)
+			.join(' ')
 	}, [attributes])
 
-	const handleTabClick = (index: number) => {
-		setActiveTab(index)
+	const handleChange = (selection: {
+		item: NuitralTabProps
+		index: number
+	}) => {
+		if (onSelection) {
+			onSelection(selection)
+		}
 	}
 
-	const getDefaultValues = (
-		propDefinitions: Partial<NuitralTabProps>
-	): Partial<NuitralTabProps> => {
-		return {
+	const onTabSelection = (selection: {
+		item: NuitralTabProps
+		index: number
+	}) => {
+		setActiveTab(selection.index)
+		handleChange(selection)
+	}
+
+	const alliItems = useMemo(() => {
+		const defaultValues: NuitralTabProps = {
 			label: '',
+			children: null,
+			component: null,
+			icon: null,
 			iconPosition: 'left',
 			classes: '',
 			disabled: false,
-			...propDefinitions,
-		} as NuitralTabProps
-	}
+			leftSide: null,
+			rightSide: null,
+		}
+
+		if (items.length > 0) {
+			return items.map(item => ({
+				...defaultValues,
+				...item,
+			}))
+		}
+
+		return (
+			React.Children.map(children, child => {
+				if (React.isValidElement<Partial<NuitralTabProps>>(child)) {
+					return {
+						...defaultValues,
+						...child.props,
+					}
+				}
+				return null
+			})?.filter((tab): tab is NuitralTabProps => tab !== null) || []
+		)
+	}, [items, children])
+
 	return (
 		<>
 			<div className={`nuitral-tabs ${borderColor} ${classes}`}>
-				{React.Children.map(children, (child, index) => {
-					if (React.isValidElement<Partial<NuitralTabProps>>(child)) {
-						const mergedProps = {
-							...getDefaultValues(child.props),
-							...child.props,
-						}
-						const newChild = React.cloneElement(child, mergedProps)
-						return (
-							<div
-								className={`nuitral-tab ${index === activeTab && 'nuitral-tab-active'} ${newChild.props.disabled && 'disabled'}`}
-								onClick={() => handleTabClick(index)}
-							>
-								{newChild.props.leftSide && (
-									<div className="left-side">{newChild.props.leftSide}</div>
-								)}
-								{newChild.props.icon &&
-									newChild.props.iconPosition === 'left' && (
-										<NuitralIcon icon={newChild.props.icon} />
-									)}
-								{newChild.props.label}
-								{newChild.props.icon &&
-									newChild.props.iconPosition === 'right' && (
-										<NuitralIcon icon={newChild.props.icon} />
-									)}
-								{newChild.props.rightSide && (
-									<div className="right-side">{newChild.props.rightSide}</div>
-								)}
-							</div>
-						)
-					}
-					return null
-				})}
+				{alliItems.map((item, index) => (
+					<div
+						key={index}
+						className={`nuitral-tab ${index === activeTab ? 'nuitral-tab-active' : ''} ${item.disabled ? 'disabled' : ''}`}
+						onClick={() => !item.disabled && onTabSelection({ item, index })}
+					>
+						{item.leftSide && <div className="left-side">{item.leftSide}</div>}
+						{item.icon && item.iconPosition === 'left' && (
+							<NuitralIcon icon={item.icon} />
+						)}
+						{item.label}
+						{item.icon && item.iconPosition === 'right' && (
+							<NuitralIcon icon={item.icon} />
+						)}
+						{item.rightSide && (
+							<div className="right-side">{item.rightSide}</div>
+						)}
+					</div>
+				))}
 			</div>
 			<div className="nuitral-tab-content">
-				{React.Children.map(children, (child, index) => {
-					if (index === activeTab && React.isValidElement(child)) {
-						return <div>{child.props.children}</div>
-					}
-					return null
-				})}
+				{alliItems[activeTab]?.component ? (
+					React.createElement(
+						alliItems[activeTab].component as React.ComponentType
+					)
+				) : alliItems[activeTab]?.children ? (
+					<div>{alliItems[activeTab].children}</div>
+				) : null}
 			</div>
 		</>
 	)

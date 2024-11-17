@@ -12,26 +12,85 @@ import Navbar from './widgets/navbar'
 import '@nuitral/icons/dist/nuitral-icons.scss'
 import './style.scss'
 import Wrapper from './components/Wrapper'
+import { NuitralTabProps } from '../lib/components/tab/types'
+import DemoComponentOne from './demoComponents/DemoComponentOne'
+import DemoComponentTwo from './demoComponents/DemoComponentTwo'
 
 function App() {
 	const [inputValue, setInputValue] = useState<string | number>('Input test')
+
+	const [tabItems, setTabItems] = useState<Partial<NuitralTabProps>[]>([
+		{
+			label: 'A',
+			icon: 'user',
+			component: DemoComponentOne,
+		},
+		{ label: 'B', icon: 'basket', component: DemoComponentTwo },
+		{ label: 'C', icon: 'basket', component: null, disabled: true },
+	])
+
+	const tabsArray: any = [1, 2, 3, 4, 5]
+
+	const testButton = () => {
+		setTabItems(prevItems => {
+			const updatedItems = [...prevItems]
+			updatedItems[1] = {
+				...updatedItems[1],
+				component: DemoComponentOne,
+				label: 'Test useState Tab',
+			}
+			return updatedItems
+		})
+	}
+
 	return (
 		<Wrapper>
 			<Navbar></Navbar>
 
 			<h1>nuitral React UI Suite</h1>
-			<NuitralTabs accent>
-				<NuitralTab label="Tab A" icon="user" leftSide={<div>L</div>}>
+			<button onClick={testButton}>test</button>
+			<NuitralTabs
+				onSelection={e => console.log(e)}
+				primary
+				selected={0}
+				items={tabItems}
+			></NuitralTabs>
+			<NuitralTabs primary onSelection={e => console.log(e)}>
+				<NuitralTab
+					label="Tab A"
+					icon="user"
+					leftSide={<div>L</div>}
+					rightSide={<div>R</div>}
+				>
 					Content of A
 				</NuitralTab>
 				<NuitralTab
 					label="Tab B"
 					iconPosition={'right'}
-					icon="user"
+					icon="basket"
 					disabled={true}
-					rightSide={<div>R</div>}
 				>
 					Content of B
+				</NuitralTab>
+				<NuitralTab label="Tab C" iconPosition={'right'}>
+					Content of B
+				</NuitralTab>
+
+				{tabsArray.map((_: number, index: number) => {
+					const num = index + 1
+					return (
+						<NuitralTab
+							key={index}
+							label={`Tab ${num}`}
+							leftSide={`Left ${num}`}
+							rightSide={`Right ${num}`}
+						>
+							Content of {num}
+						</NuitralTab>
+					)
+				})}
+				<NuitralTab label="Component Two">
+					<DemoComponentTwo />{' '}
 				</NuitralTab>
 			</NuitralTabs>
 			<NuitralInput
