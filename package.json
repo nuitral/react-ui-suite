@@ -31,8 +31,8 @@
 	"homepage": "https://nuitral.github.io",
 	"dependencies": {
 		"@nuitral/icons": "^0.0.1-alpha.2",
-		"@nuitral/theming": "^0.0.1-alpha.7",
-		"@nuitral/types": "^0.0.1-alpha.6",
+		"@nuitral/theming": "file:../theming/nuitral-theming-0.0.1-alpha.8.tgz",
+		"@nuitral/types": "file:../types/nuitral-types-0.0.1-alpha.7.tgz",
 		"react": "^17.0.0 || ^18.0.0",
 		"react-dom": "^17.0.0 || ^18.0.0"
 	},

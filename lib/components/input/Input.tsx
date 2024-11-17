@@ -1,6 +1,6 @@
 import React from 'react'
 import Icon from '../icon'
-import { NuitralInputProps } from './types';
+import { NuitralInputProps } from './types'
 
 const Input: React.FC<NuitralInputProps> = ({
 	type = 'text',
