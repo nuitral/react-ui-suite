@@ -5,7 +5,7 @@ import { NuitralIcon } from '../index'
 import useAttrs from '../../hooks/attributes'
 import useColorsAttributesValidator from '../../hooks/colorsAttributesValidator'
 
-const NuitralTabs: React.FC<Partial<NuitralTabsProp>> = ({
+const Tabs: React.FC<Partial<NuitralTabsProp>> = ({
 	items = [],
 	children = [],
 	classes = '',
@@ -116,4 +116,4 @@ const NuitralTabs: React.FC<Partial<NuitralTabsProp>> = ({
 	)
 }
 
-export default NuitralTabs
+export default Tabs

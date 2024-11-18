@@ -1,8 +1,8 @@
 import React from 'react'
 import { NuitralTabProps } from './types'
 
-const NuitralTab: React.FC<Partial<NuitralTabProps>> = () => {
+const Tab: React.FC<Partial<NuitralTabProps>> = () => {
 	return <></>
 }
 
-export default NuitralTab
+export default Tab
