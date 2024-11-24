@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react'
 import { NuitralTabsProp } from './types'
 import { NuitralTabProps } from '../tab/types'
-import { NuitralIcon } from '../index'
+import Icon  from '../icon/index'
 import useAttrs from '../../hooks/attributes'
 import useColorsAttributesValidator from '../../hooks/colorsAttributesValidator'
 
@@ -91,11 +91,11 @@ const Tabs: React.FC<Partial<NuitralTabsProp>> = ({
 					>
 						{item.leftSide && <div className="left-side">{item.leftSide}</div>}
 						{item.icon && item.iconPosition === 'left' && (
-							<NuitralIcon icon={item.icon} />
+							<Icon icon={item.icon} />
 						)}
 						{item.label}
 						{item.icon && item.iconPosition === 'right' && (
-							<NuitralIcon icon={item.icon} />
+							<Icon icon={item.icon} />
 						)}
 						{item.rightSide && (
 							<div className="right-side">{item.rightSide}</div>
