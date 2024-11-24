@@ -55,7 +55,7 @@ function App() {
 				selected={0}
 				items={tabItems}
 			></NuitralTabs>
-			<NuitralTabs primary onSelection={e => console.log(e)}>
+			<NuitralTabs accent onSelection={e => console.log(e)}>
 				<NuitralTab
 					label="Tab A"
 					icon="user"
