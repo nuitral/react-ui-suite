@@ -1,6 +1,6 @@
 {
 	"name": "@nuitral/react-ui-suite",
-	"version": "0.0.1-alpha.5",
+	"version": "0.0.1-alpha.6",
 	"publishConfig": {
 		"access": "public"
 	},
@@ -31,25 +31,25 @@
 	"homepage": "https://nuitral.github.io",
 	"dependencies": {
 		"@nuitral/icons": "^0.0.1-alpha.2",
-		"@nuitral/theming": "^0.0.1-alpha.8",
-		"@nuitral/types": "^0.0.1-alpha.7",
-		"react": "^17.0.0 || ^18.0.0",
-		"react-dom": "^17.0.0 || ^18.0.0"
+		"@nuitral/theming": "^0.0.1-alpha.10",
+		"@nuitral/types": "^0.0.1-alpha.8",
+		"react": "^19.1.0",
+		"react-dom": "^19.1.0"
 	},
 	"devDependencies": {
-		"@rollup/plugin-commonjs": "^26.0.1",
-		"@rollup/plugin-node-resolve": "^15.2.3",
+		"@rollup/plugin-commonjs": "^28.0.3",
+		"@rollup/plugin-node-resolve": "^16.0.1",
 		"@rollup/plugin-terser": "^0.4.4",
-		"@rollup/plugin-typescript": "^11.1.6",
-		"@types/node": "^22.4.1",
-		"@types/react": "^18.3.3",
-		"@types/react-dom": "^18.3.0",
-		"@vitejs/plugin-react-swc": "^3.7.0",
-		"prettier": "^3.3.3",
-		"rollup": "^4.21.0",
-		"sass": "^1.79.4",
-		"tslib": "^2.6.3",
-		"typescript": "^5.6.2",
-		"vite": "^5.4.2"
+		"@rollup/plugin-typescript": "^12.1.2",
+		"@types/node": "^22.15.30",
+		"@types/react": "^19.1.6",
+		"@types/react-dom": "^19.1.6",
+		"@vitejs/plugin-react-swc": "^3.10.1",
+		"prettier": "^3.5.3",
+		"rollup": "^4.42.0",
+		"sass": "^1.89.1",
+		"tslib": "^2.8.1",
+		"typescript": "^5.8.3",
+		"vite": "^6.3.5"
 	}
 }

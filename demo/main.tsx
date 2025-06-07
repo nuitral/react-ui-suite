@@ -7,6 +7,7 @@ import {
 	NuitralInput,
 	NuitralTab,
 	NuitralTabs,
+	NuitralCard,
 } from '../lib'
 import Navbar from './widgets/navbar'
 import '@nuitral/icons/dist/nuitral-icons.scss'
@@ -48,6 +49,34 @@ function App() {
 			<Navbar></Navbar>
 
 			<h1>nuitral React UI Suite</h1>
+			<NuitralCard
+				background-400
+				border-primary
+				header={<div>Header</div>}
+				footer={<div>Footer</div>}
+			>
+				Body
+			</NuitralCard>
+
+			<br />
+
+			<NuitralCard background-800 hasShadow
+				header={<div>Header</div>}
+				footer={<div>Footer</div>}>
+				Body
+			</NuitralCard>
+
+			<br />
+
+			<NuitralCard
+				hasShadow
+				header={<div>Header</div>}
+				footer={<div>Footer</div>}
+			>
+				Body
+			</NuitralCard>
+
+			<br />
 			<button onClick={testButton}>test</button>
 			<NuitralTabs
 				onSelection={e => console.log(e)}

@@ -11,6 +11,7 @@ const useColorsAttributesValidator = () => {
 			'warning',
 			'info',
 			'neutral',
+			'background',
 		],
 		[]
 	)
