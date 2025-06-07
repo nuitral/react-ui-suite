@@ -6,6 +6,7 @@ const Navbar = () => {
 		theme: 'nuitral',
 		darkMode: false,
 		rootId: 'demo-app',
+		saveSettings: true,
 	})
 
 	return (

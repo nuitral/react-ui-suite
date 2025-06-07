@@ -8,7 +8,7 @@ const Card: React.FC<NuitralCardProps> = ({
 	children,
 	header,
 	footer,
-	hasShadow,
+	hasShadow= false,
 	...attrs
 }) => {
 	const attributes = useAttrs(attrs)
@@ -31,23 +31,28 @@ const Card: React.FC<NuitralCardProps> = ({
 	const borderColor = useMemo(() => {
 		const filteredAttrs: Record<string, any> = {}
 		for (const key in attributes) {
+			console.log('border',key)
 			if (isValidAttribute(key) && key.startsWith('border-')) {
 				filteredAttrs[key] = attributes[key]
 			}
 		}
 		if (!Object.keys(filteredAttrs).length) return 'nuitral-card-border-primary'
-		return Object.keys(filteredAttrs).map(key => `nuitral-card-border-${key}`)
+		console.log('borderColor',Object.keys(filteredAttrs).map(key => `nuitral-card-border-${key}`))
+		return Object.keys(filteredAttrs).map(key => `nuitral-card-${key}`)
 	}, [attributes])
 
 	return (
-		<div
-			{...attributes}
-			className={`nuitral-card ${classes} ${backgroundColorClasses} ${hasShadow ? 'nuitral-card-shadow' : borderColor}`}
-		>
-			{header && <div className="nuitral-card-header">{header}</div>}
-			{children}
-			{footer && <div className="nuitral-card-footer">{footer}</div>}
-		</div>
+		<>
+			<div>{backgroundColorClasses}</div>
+			<div
+				{...attributes}
+				className={`nuitral-card ${classes} ${backgroundColorClasses} ${hasShadow ? 'nuitral-card-shadow' : borderColor}`}
+			>
+				{header && <div className="nuitral-card-header">{header}</div>}
+				{children}
+				{footer && <div className="nuitral-card-footer">{footer}</div>}
+			</div>
+		</>
 	)
 }
 export default Card

@@ -12,6 +12,7 @@ const useColorsAttributesValidator = () => {
 			'info',
 			'neutral',
 			'background',
+			'surface',
 		],
 		[]
 	)
@@ -21,16 +22,17 @@ const useColorsAttributesValidator = () => {
 		[]
 	)
 
-	const validAttributes = useMemo(() => {
-		const attributes: string[] = []
-		colors.forEach(color => {
-			attributes.push(`${color}`)
-			scales.forEach(scale => {
-				attributes.push(`${color}-${scale}`)
-			})
+	const validAttributes: string[] = []
+	colors.forEach(color => {
+		validAttributes.push(`${color}`)
+		scales.forEach(scale => {
+			validAttributes.push(`${color}-${scale}`)
 		})
-		return attributes
-	}, [colors, scales])
+		validAttributes.push(`border-${color}`)
+		scales.forEach(scale => {
+			validAttributes.push(`border-${color}-${scale}`)
+		})
+	})
 
 	const isValidAttribute = (attr: string) => validAttributes.includes(attr)
 

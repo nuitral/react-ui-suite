@@ -49,9 +49,7 @@ function App() {
 			<Navbar></Navbar>
 
 			<h1>nuitral React UI Suite</h1>
-			<NuitralCard
-				background-400
-				border-primary
+			<NuitralCard background-400 border-accent
 				header={<div>Header</div>}
 				footer={<div>Footer</div>}
 			>
@@ -60,7 +58,7 @@ function App() {
 
 			<br />
 
-			<NuitralCard background-800 hasShadow
+			<NuitralCard background-100 hasShadow
 				header={<div>Header</div>}
 				footer={<div>Footer</div>}>
 				Body
