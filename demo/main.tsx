@@ -47,7 +47,6 @@ function App() {
 	return (
 		<Wrapper>
 			<Navbar></Navbar>
-
 			<h1>nuitral React UI Suite</h1>
 			<NuitralCard background-400 border-accent
 				header={<div>Header</div>}

@@ -1,16 +1,17 @@
 {
 	"compilerOptions": {
-		"target": "esnext",
-		"module": "esnext",
-		"jsx": "react-jsx",
 		"declaration": true,
 		"declarationDir": "dist",
 		"outDir": "dist",
 		"moduleResolution": "node",
 		"esModuleInterop": true,
 		"skipLibCheck": true,
+		"importHelpers": true,
+		"jsx": "react-jsx",
 		"strict": true,
-		"importHelpers": true
+		"module": "esnext",
+		"target": "es2022"
+
 	},
 	"include": ["lib/**/*"],
 	"exclude": ["src/**/*"]
