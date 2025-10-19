@@ -1,8 +1,8 @@
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./media/react-suite-dark.svg" height="150" />
-    <source media="(prefers-color-scheme: light)" srcset="./media/react-suite-light.svg"  height="150" />
-    <img src="./media/react-suite-dark.svg" alt="nuitral core logo" height="150">
+    <source media="(prefers-color-scheme: dark)" srcset="./media/react-suite-dark.png" height="150" />
+    <source media="(prefers-color-scheme: light)" srcset="./media/react-suite-light.png"  height="150" />
+    <img src="./media/react-suite-dark.png" alt="nuitral core logo" height="150">
   </picture>
 </p>
 
