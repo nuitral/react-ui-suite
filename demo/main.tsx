@@ -49,14 +49,21 @@ function App() {
 			<Navbar></Navbar>
 
 			<h1>nuitral React UI Suite</h1>
+
+			<div className='pb-2'></div>
+
+			<div className='nuitral-color-primary-300'>
+				Primary 400
+			</div>
+
+			<div className='pb-2'></div>
+
 			<NuitralCard background-400 border-accent
 				header={<div>Header</div>}
 				footer={<div>Footer</div>}
 			>
 				Body
 			</NuitralCard>
-
-			<br />
 
 			<NuitralCard background-100 hasShadow
 				header={<div>Header</div>}
@@ -74,7 +81,7 @@ function App() {
 				Body
 			</NuitralCard>
 
-			<br />
+			<div className='pb-3'></div>
 			<button onClick={testButton}>test</button>
 			<NuitralTabs
 				onSelection={e => console.log(e)}
@@ -120,6 +127,9 @@ function App() {
 					<DemoComponentTwo />{' '}
 				</NuitralTab>
 			</NuitralTabs>
+
+			<div className='pb-3'></div>
+
 			<NuitralInput
 				value={inputValue}
 				onChange={setInputValue}
@@ -142,7 +152,11 @@ function App() {
 				disabled
 			></NuitralInput>
 
+
 			{inputValue}
+
+			<div className='pb-3'></div>
+
 			<NuitralButton accent icon="user">
 				Button
 			</NuitralButton>
@@ -161,11 +175,16 @@ function App() {
 				disabled
 				rightSide={<div>Right Side</div>}
 			></NuitralButton>
+
+			<div className='pb-3'></div>
+
 			<NuitralBox
 				title={'Title'}
 				description={'Description'}
 				primary
 			></NuitralBox>
+
+			<div className='pb-3'></div>
 			<NuitralIcon icon={'user'}></NuitralIcon>
 		</Wrapper>
 	)
