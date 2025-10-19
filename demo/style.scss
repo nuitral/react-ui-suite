@@ -1,8 +1,9 @@
-@use '@nuitral/theming/dist/scss/_index.scss' as nuitral;
+@use '../../theming/lib/scss/variables' with ($primary-light: red, $primary-dark: blue);
+@use '../../theming/lib/scss/_index.scss' as nuitral;
 
 @include nuitral.generate-theme(nuitral.$light-mode, nuitral.$dark-mode);
 
-$primary-light-scale: nuitral.generate-color-scale(#ff0054);
+$primary-light-scale: nuitral.generate-color-scale(purple);
 $secondary-light-scale: nuitral.generate-color-scale(#00d8ff);
 $accent-light-scale: nuitral.generate-color-scale(#ffdc00);
 $error-light-scale: nuitral.generate-color-scale(#ff4136);
@@ -26,7 +27,7 @@ $light-mode: (
 	neutral: $neutral-light-scale,
 );
 
-$primary-dark-scale: nuitral.generate-color-scale(#ff337a);
+$primary-dark-scale: nuitral.generate-color-scale(green);
 $secondary-dark-scale: nuitral.generate-color-scale(#00a3cc);
 $accent-dark-scale: nuitral.generate-color-scale(#ffd700);
 $error-dark-scale: nuitral.generate-color-scale(#ff6347);
@@ -57,5 +58,5 @@ body {
 	margin: 0;
 	width: 100%;
 	height: 100vh;
-	background-color: nuitral.$background !important;
+	background-color: variables.$background-500 !important;
 }

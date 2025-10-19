@@ -14,7 +14,7 @@ const Box: React.FC<NuitralBoxProps> = ({ title, description, ...attrs }) => {
 			}
 		}
 		return Object.keys(filteredAttrs).map(
-			key => `nuitral-box-background-${key}`
+			key => `nuitral-box-${key}`
 		)
 	}, [attributes])
 
