@@ -8,7 +8,9 @@
 	"module": "dist/react-ui-suite.esm.js",
 	"types": "dist/index.d.ts",
 	"files": [
-		"dist/*"
+		"dist/*",
+		"media",
+		"README.md"
 	],
 	"scripts": {
 		"build": "rm -rf dist && rollup -c",
