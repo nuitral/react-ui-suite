@@ -7,7 +7,7 @@
 </p>
 
 
-<p><b>nuitral react ui suite</b> provides a complete React UI Suite for your projects.</p>
+<p><b>nuitral React UI suite</b> provides a complete and native UI component suite for React projects.</p>
 
 <p><b>Status:</b> This project is currently in <b>alpha version</b>.</p>
 
