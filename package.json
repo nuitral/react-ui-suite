@@ -30,9 +30,9 @@
 	},
 	"homepage": "https://nuitral.github.io",
 	"dependencies": {
-		"@nuitral/core": "file:../core/nuitral-core-0.0.1-alpha.3.tgz",
+		"@nuitral/core": "^0.0.1-alpha.1",
 		"@nuitral/icons": "^0.0.1-alpha.2",
-		"@nuitral/theming": "^0.0.1-alpha.10",
+		"@nuitral/theming": "^0.0.1-alpha.11",
 		"@nuitral/types": "^0.0.1-alpha.8",
 		"react": "^19.1.0",
 		"react-dom": "^19.1.0"

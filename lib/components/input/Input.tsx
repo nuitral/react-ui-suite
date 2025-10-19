@@ -1,40 +1,53 @@
-import React from 'react'
-import Icon from '../icon'
+import React, { useEffect, useRef } from 'react'
 import { NuitralInputProps } from './types'
-import "@nuitral/core/input"
 
 const Input: React.FC<NuitralInputProps> = ({
 	type = 'text',
 	placeholder = '',
-	icon,
-	iconPosition = 'left',
 	disabled = false,
+	icon = null,
+	iconPosition = 'left',
 	classes = '',
-	value,
+	value = '',
 	onChange,
 }) => {
-	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-		const newValue = type === 'number' ? Number(e.target.value) : e.target.value
-		onChange(newValue)
-	}
+	const inputRef = useRef<any>(null)
+
+	const computedClasses = `${classes} ${disabled ? 'disabled' : ''}`.trim()
+
+	useEffect(() => {
+		const current = inputRef.current
+
+		if (!current) return
+
+		const handleValueChange = (e: CustomEvent) => {
+			onChange?.(e.detail.value)
+		}
+
+		current.addEventListener('value-change', handleValueChange)
+
+		return () => {
+			current.removeEventListener('value-change', handleValueChange)
+		}
+	}, [onChange])
+
+	useEffect(() => {
+		if (inputRef.current && inputRef.current.value !== value) {
+			inputRef.current.value = value
+		}
+	}, [value])
+
 	return (
-		<div>
-			<nuitral-core-input></nuitral-core-input>
-
-		<div
-			className={`nuitral-input nuitral-input-text-color ${classes}  ${disabled ? 'disabled' : ''}`}
-		>
-
-			{icon && iconPosition === 'left' && <Icon icon={icon} />}
-			<input
-				type={type}
-				disabled={disabled}
-				placeholder={placeholder}
-				value={value}
-				onChange={handleChange}
-			/>
-			{icon && iconPosition === 'right' && <Icon icon={icon} />}
-		</div></div>
+		<nuitral-core-input
+			ref={inputRef}
+			value={value}
+			type={type}
+			icon={icon}
+			iconPosition={iconPosition}
+			placeholder={placeholder}
+			disabled={disabled}
+			classes={computedClasses}
+		></nuitral-core-input>
 	)
 }
 

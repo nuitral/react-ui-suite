@@ -5,10 +5,8 @@ interface IconProps {
 	icon?: NuitralIconsId
 }
 
-const Icon: React.FC<IconProps> = ({ icon = '' }) => {
-	const iconClass = useMemo(() => `nuitral-icon-${icon}`, [icon])
-
-	return <div className={`nuitral-icon ${iconClass}`}></div>
+const Icon: React.FC<IconProps> = ({ icon = null }) => {
+	return <nuitral-core-icon icon={ icon }></nuitral-core-icon>
 }
 
 export default Icon
