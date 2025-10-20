@@ -1,6 +1,6 @@
 {
 	"name": "@nuitral/react-ui-suite",
-	"version": "0.0.1-alpha.10",
+	"version": "0.0.1-alpha.11",
 	"publishConfig": {
 		"access": "public"
 	},
@@ -34,7 +34,7 @@
 	"dependencies": {
 		"@nuitral/core": "^0.0.1-alpha.1",
 		"@nuitral/icons": "^0.0.1-alpha.2",
-		"@nuitral/theming": "^0.0.1-alpha.11",
+		"@nuitral/theming": "^0.0.1-alpha.12",
 		"@nuitral/types": "^0.0.1-alpha.8",
 		"react": "^19.1.0",
 		"react-dom": "^19.1.0"

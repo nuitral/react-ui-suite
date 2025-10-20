@@ -22,9 +22,9 @@ const Card: React.FC<NuitralCardProps> = ({
 			}
 		}
 		if (!Object.keys(filteredAttrs).length)
-			return 'nuitral-card-background-background'
+			return 'nuitral-card-background'
 		return Object.keys(filteredAttrs).map(
-			key => `nuitral-card-background-${key}`
+			key => `nuitral-card-${key}`
 		)
 	}, [attributes])
 
