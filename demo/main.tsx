@@ -49,6 +49,61 @@ function App() {
 			<Navbar></Navbar>
 			<h1>nuitral React UI Suite</h1>
 
+			layout
+			<div className="layout-flex mb-4">
+				<div className="col-1 nuitral-background-primary-300">1</div>
+				<div className="col-2 nuitral-background-primary-400">2</div>
+				<div className="col-3 nuitral-background-primary-500">3</div>
+				<div className="col-6 nuitral-background-primary-600">6</div>
+			</div>
+
+			<div className="layout-flex mb-4">
+				<div className="col nuitral-background-secondary-300">col</div>
+				<div className="col nuitral-background-secondary-400">col</div>
+				<div className="col-auto nuitral-background-secondary-500">col-auto</div>
+			</div>
+
+			<div className="layout-flex mb-4">
+				<div className="col-auto nuitral-background-secondary-300">col-auto</div>
+				<div className="col-auto nuitral-background-secondary-500">col-auto</div>
+			</div>
+
+			<div className="layout-flex mb-4">
+				<div className="mobile-col-12 tablet-col-6 laptop-col-3 nuitral-background-accent-300">
+					mobile-col-12 tablet-col-6 laptop-col-3
+				</div>
+				<div className="mobile-col-12 tablet-col-6 laptop-col-3 nuitral-background-accent-400">
+					mobile-col-12 tablet-col-6 laptop-col-3
+				</div>
+				<div className="mobile-col-12 tablet-col-6 laptop-col-3 nuitral-background-accent-500">
+					mobile-col-12 tablet-col-6 laptop-col-3
+				</div>
+				<div className="mobile-col-12 tablet-col-6 laptop-col-3 nuitral-background-accent-600">
+					mobile-col-12 tablet-col-6 laptop-col-3
+				</div>
+			</div>
+
+			<div className="layout-flex mb-4">
+				<div className="xs-col-12 sm-col-6 md-col-4 lg-col-3 xl-col-2 nuitral-background-success-300">
+					xs-col-12 sm-col-6 md-col-4 lg-col-3 xl-col-2
+				</div>
+				<div className="xs-col-12 sm-col-6 md-col-4 lg-col-3 xl-col-2 nuitral-background-success-500">
+					xs-col-12 sm-col-6 md-col-4 lg-col-3 xl-col-2
+				</div>
+				<div className="xs-col-12 sm-col-6 md-col-4 lg-col-3 xl-col-2 nuitral-background-success-700">
+					xs-col-12 sm-col-6 md-col-4 lg-col-3 xl-col-2
+				</div>
+				<div className="xs-col-12 sm-col-6 md-col-4 lg-col-3 xl-col-2 nuitral-background-success-900">
+					xs-col-12 sm-col-6 md-col-4 lg-col-3 xl-col-2
+				</div>
+				<div className="xs-col-12 sm-col-6 md-col-4 lg-col-3 xl-col-2 nuitral-background-success-900">
+					xs-col-12 sm-col-6 md-col-4 lg-col-3 xl-col-2
+				</div>
+				<div className="xs-col-12 sm-col-6 md-col-4 lg-col-3 xl-col-2 nuitral-background-success-900">
+					xs-col-12 sm-col-6 md-col-4 lg-col-3 xl-col-2
+				</div>
+			</div>
+
 			<div className='pb-2'></div>
 
 			<div className='nuitral-color-primary-300'>
