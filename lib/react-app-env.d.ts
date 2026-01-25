@@ -5,6 +5,14 @@ import { NuitralIconsId } from '@nuitral/icons'
 declare module 'react' {
 	namespace JSX {
 		interface IntrinsicElements {
+			'nuitral-core-chip': React.DetailedHTMLProps<
+				React.HTMLAttributes<HTMLElement>,
+				HTMLElement
+			> & {
+				iconPosition?: NuitralIconPosition
+				icon?: NuitralIconsId | null
+				classes?: NuitralClass
+			}
 			'nuitral-core-input': React.DetailedHTMLProps<
 				React.HTMLAttributes<HTMLElement>,
 				HTMLElement
@@ -17,7 +25,7 @@ declare module 'react' {
 				disabled?: boolean
 				classes?: NuitralClass
 				onValueChange?: (event: CustomEvent<{ value: string }>) => void
-			},
+			}
 			'nuitral-core-icon': React.DetailedHTMLProps<
 				React.HTMLAttributes<HTMLElement>,
 				HTMLElement

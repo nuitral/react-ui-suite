@@ -1,6 +1,6 @@
 {
 	"name": "@nuitral/react-ui-suite",
-	"version": "0.0.1-alpha.12",
+	"version": "0.0.1-beta.1",
 	"publishConfig": {
 		"access": "public"
 	},
@@ -32,10 +32,10 @@
 	},
 	"homepage": "https://nuitral.github.io",
 	"dependencies": {
-		"@nuitral/core": "^0.0.1-alpha.1",
+		"@nuitral/core": "^0.0.1-beta.2",
 		"@nuitral/icons": "^0.0.1-alpha.2",
-		"@nuitral/theming": "^0.0.1-alpha.13",
-		"@nuitral/types": "^0.0.1-alpha.8",
+		"@nuitral/theming": "^0.0.1-beta.2",
+		"@nuitral/types": "^0.0.1-beta.2",
 		"react": "^19.1.0",
 		"react-dom": "^19.1.0"
 	},
