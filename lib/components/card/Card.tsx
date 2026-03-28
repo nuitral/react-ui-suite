@@ -41,7 +41,6 @@ const Card: React.FC<NuitralCardProps> = ({
 
 	return (
 		<>
-			<div>{backgroundColorClasses}</div>
 			<div
 				{...attributes}
 				className={`nuitral-card ${classes} ${backgroundColorClasses} ${hasShadow ? 'nuitral-card-shadow' : borderColor}`}
